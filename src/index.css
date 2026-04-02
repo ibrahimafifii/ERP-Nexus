@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Cairo', sans-serif; }
+  body { @apply bg-slate-50 text-slate-900 antialiased; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800
+    text-white font-semibold px-4 py-2.5 rounded-xl text-sm
+    transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply flex items-center justify-center gap-2 bg-white hover:bg-slate-50
+    text-slate-700 font-medium px-4 py-2.5 rounded-xl text-sm
+    border border-slate-200 transition-all duration-150;
+  }
+  .btn-danger {
+    @apply flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700
+    text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition-all duration-150;
+  }
+  .input {
+    @apply w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+    bg-white placeholder-slate-400 transition-all;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm;
+  }
+  .badge-green { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700; }
+  .badge-red { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-red-50 text-red-600; }
+  .badge-yellow { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700; }
+  .badge-blue { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700; }
+}
